@@ -28,10 +28,17 @@
                     {{ contact.first_name }} {{ contact.last_name }}
                   </h5></b-col
                 >
-                <b-col><b-icon-trash-fill
-                  class="h4 mt-2"
-                  variant="danger"
-                /></b-col>
+                <b-col>
+                  <button
+                    type="button"
+                    class="btn btn-link"
+                    @click="deleteContact(contact.id)"
+                  >
+                    <b-icon-trash-fill
+                      class="h4 mt-2"
+                      variant="danger"
+                    /></button
+                ></b-col>
               </b-row>
             </b-card>
           </div>
@@ -61,6 +68,20 @@ export default {
       return this.$store.getters.contactList;
     },
   },
+  methods:{
+    deleteContact: function(id){
+      console.log(id)
+      this.$store.dispatch("deleteContact", id).then((response) => {
+        if(response.status === 204){
+          this.$toasted.success("Deleted Successfully", {
+            theme: "bubble",
+            position: "top-right",
+            duration: 4000
+          });
+        }
+      })
+    }
+  }
 };
 </script>
 
@@ -98,7 +119,4 @@ export default {
   border-radius: 0 0;
 }
 
-.db {
-  display: block;
-}
 </style>
