@@ -38,6 +38,5 @@ export default new Vuex.Store({
     contactList(state) {
       return state.contactList;
     },
-  },
-  modules:{}
+  }
 });
