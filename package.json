@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.3",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
@@ -43,7 +44,7 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
+    "la st 2 versions",
     "not dead"
   ]
 }
