@@ -1,7 +1,7 @@
 <template>
   <b-container>
     <b-row align-h="center">
-      <b-col col lg="6">
+      <b-col col lg="6" md="6" sm="4">
         <b-card
           class="custom-card w-100 mt-5"
           header-tag="header"
@@ -14,8 +14,8 @@
           <div v-for="(contact, index) in contactList" :key="index">
             <b-card class="custom-card w-100 mt-1" body-class="custom-body p-0">
               <b-row align-v="center">
-                <b-col cols="3"
-                  ><div class="p-3">
+                <b-col cols="3" cols-lg="3"
+                  ><div class="p-lg-3">
                     <b-img
                       v-bind="mainProps"
                       rounded="circle"
@@ -23,12 +23,12 @@
                       alt="Circle image"
                     ></b-img></div
                 ></b-col>
-                <b-col cols="7"
+                <b-col cols="6" cols-lg="7"
                   ><h5>
                     {{ contact.first_name }} {{ contact.last_name }}
                   </h5></b-col
                 >
-                <b-col>
+                <b-col cols="2" cols-lg="1">
                   <button
                     type="button"
                     class="btn btn-link"
@@ -57,8 +57,8 @@ export default {
   data() {
     return {
       mainProps: {
-        width: 75,
-        height: 75,
+        width: 65,
+        height: 65,
         class: "m1",
       },
     };
@@ -73,7 +73,7 @@ export default {
       console.log(id)
       this.$store.dispatch("deleteContact", id).then((response) => {
         if(response.status === 204){
-          this.$toasted.success("Deleted Successfully", {
+          this.$toasted.success("Contact deleted successfully", {
             theme: "bubble",
             position: "top-right",
             duration: 4000
