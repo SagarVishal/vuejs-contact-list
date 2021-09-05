@@ -1,9 +1,9 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import axios from 'axios'
+import axios from "axios";
 
 Vue.use(Vuex);
-Vue.use(axios)
+Vue.use(axios);
 
 export default new Vuex.Store({
   state: {
@@ -17,13 +17,14 @@ export default new Vuex.Store({
   actions: {
     getContactList() {
       return axios.get("https://reqres.in/api/users").then((response) => {
-        this.commit("contactList", response.data);
+        this.commit("contactList", response.data.data);
       });
     },
   },
   getters: {
     contactList(state) {
-      return state.contactList
-    }
+      return state.contactList;
+    },
   },
+  modules:{}
 });

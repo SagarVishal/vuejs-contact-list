@@ -42,9 +42,5 @@
     },
     "rules": {}
   },
-  "browserslist": [
-    "> 1%",
-    "la st 2 versions",
-    "not dead"
-  ]
+  "browserslist": []
 }
